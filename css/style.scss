@@ -1,0 +1,78 @@
+
+.header {
+    background-color: aqua;
+    position: relative;
+    .big-orxan {
+        li {
+            &.dropped-li,
+            &.big-dropped-li {
+                position: relative;
+                &:hover {
+                    .dropped-ul,
+                    .big-dropped {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(0);
+                    }
+                }
+                .dropped-ul,
+                .big-dropped {
+                    box-shadow: 0 0 20px 0 #000000;
+                    background-color: rgb(165, 165, 165);
+                    position: absolute;
+                    min-width: 100px;
+                    transition: 0.3s ease-in-out;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(15px);
+                    top: 100%;
+                    left: 0%;
+                    li {
+                        a {
+                            padding: 10px;
+                        }
+                    }
+                }
+                .big-dropped {
+                    width: 100%;
+                    .dropped-item {
+                        flex: 1;
+                    }
+                }
+            }
+            &.big-dropped-li {
+                position: static;
+            }
+            a {
+                text-decoration: none;
+                padding: 15px;
+                display: block;
+                // margin-top: 10px;
+            }
+        }
+    }
+}
+// +++++++++++++++++++++++++++++
+// RESPONSIVE
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 15px;
+        .big-orxan {
+            flex-direction: column;
+            position: absolute;
+            background-color: red;
+            width: 100%;
+            left: 0%;
+            top: 100%;
+        
+            .dropped-li,.big-dropped-li{
+                .dropped-ul,.big-dropped{
+                    display: none;
+                    width: 100%;
+                    transition: 0;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}

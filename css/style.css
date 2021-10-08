@@ -1,0 +1,87 @@
+.header {
+  background-color: aqua;
+  position: relative;
+}
+
+.header .big-orxan li.dropped-li, .header .big-orxan li.big-dropped-li {
+  position: relative;
+}
+
+.header .big-orxan li.dropped-li:hover .dropped-ul,
+.header .big-orxan li.dropped-li:hover .big-dropped, .header .big-orxan li.big-dropped-li:hover .dropped-ul,
+.header .big-orxan li.big-dropped-li:hover .big-dropped {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.header .big-orxan li.dropped-li .dropped-ul,
+.header .big-orxan li.dropped-li .big-dropped, .header .big-orxan li.big-dropped-li .dropped-ul,
+.header .big-orxan li.big-dropped-li .big-dropped {
+  -webkit-box-shadow: 0 0 20px 0 #000000;
+          box-shadow: 0 0 20px 0 #000000;
+  background-color: #a5a5a5;
+  position: absolute;
+  min-width: 100px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
+  top: 100%;
+  left: 0%;
+}
+
+.header .big-orxan li.dropped-li .dropped-ul li a,
+.header .big-orxan li.dropped-li .big-dropped li a, .header .big-orxan li.big-dropped-li .dropped-ul li a,
+.header .big-orxan li.big-dropped-li .big-dropped li a {
+  padding: 10px;
+}
+
+.header .big-orxan li.dropped-li .big-dropped, .header .big-orxan li.big-dropped-li .big-dropped {
+  width: 100%;
+}
+
+.header .big-orxan li.dropped-li .big-dropped .dropped-item, .header .big-orxan li.big-dropped-li .big-dropped .dropped-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.header .big-orxan li.big-dropped-li {
+  position: static;
+}
+
+.header .big-orxan li a {
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 15px;
+  }
+  .header .big-orxan {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    left: 0%;
+    top: 100%;
+  }
+  .header .big-orxan .dropped-li .dropped-ul, .header .big-orxan .dropped-li .big-dropped, .header .big-orxan .big-dropped-li .dropped-ul, .header .big-orxan .big-dropped-li .big-dropped {
+    display: none;
+    width: 100%;
+    -webkit-transition: 0;
+    transition: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+/*# sourceMappingURL=style.css.map */
